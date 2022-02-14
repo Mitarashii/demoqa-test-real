@@ -1,0 +1,18 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral() // зашит внутри URL, где лежат всякие библиотеке и по нужде скачает
+}
+
+dependencies { // это джар файл, в котором находятся классы и они не бесплатные, могут много весить
+    testImplementation ("org.junit.jupiter:junit-jupiter:5.8.0")
+    testRuntimeOnly ("org.junit.jupiter:junit-jupiter-engine:5.8.0") // благодаря ему все будет работать одинаково в любой среде
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
